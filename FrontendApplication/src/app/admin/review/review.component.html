@@ -1,0 +1,51 @@
+<div class="bg">
+    <div class="row col-center header"><h2>Posts For Review</h2></div>
+    <div class="row col-center" >
+        <div class="col-40 product-review " *ngFor="let review of reviews">
+            <div class="row col-start product-code">Proudct Code : {{review.productCode}}</div>
+            <div class="row">
+                <div class="col-75 review left">
+                    <div class="row">
+                        <div class="col-75 heading">{{review.heading}}</div>
+                        <div class="col-25">
+                            {{review.rating}}<i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row col-center">
+                        <div class="col comment">{{review.review}}</div>
+                    </div>
+                </div>
+                <div class="col-25 right activity">
+                    <button class="action accept" title="accept" (click)="acceptReview(review.reviewId)"><i class="fa fa-check-square" aria-hidden="true"></i>ACCEPT</button>
+                    <button class="action reject" title="reject" (click)="rejectReview(review.reviewId)"><i class="fa fa-window-close" aria-hidden="true"></i>REJECT</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-40"></div>
+    </div>
+    <div class="row col-center header"><h2>Product For Review</h2></div>
+    <div class="row col-center" >
+        <div class="col-40 product-review " *ngFor="let product of products">
+            <div class="row col-start product-code">Proudct Code : {{product.code}}</div>
+            <div class="row">
+                <div class="col-75 review left">
+                    <div class="row">
+                        <div class="col-75 heading">Product Name : {{product.name}}</div>
+                        <div class="col-25">
+                            {{product.avgRating}}<i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row col-center">
+                        <div class="col comment">Product Brand : {{product.brand}}</div>
+                        <div class="col comment">Number of Reviews : {{product.noOfReviews}}</div>
+                    </div>
+                </div>
+                <div class="col-25 right activity">
+                    <button class="action accept" title="accept" (click)="acceptProduct(product.code)"><i class="fa fa-check-square" aria-hidden="true"></i>ACCEPT</button>
+                    <button class="action reject" title="reject" (click)="rejectProduct(product.code)"><i class="fa fa-window-close" aria-hidden="true"></i>REJECT</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-40"></div>
+    </div>
+</div>

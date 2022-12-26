@@ -1,0 +1,57 @@
+<div class="outer-bg">
+    <div class="inner-bg shadow">
+
+        <div class="row col-start">
+            <input type="submit" value="Back" (click)="back()">
+        </div>
+        
+        <div class="row product-details">
+            <table>
+                <tr>
+                    <th>
+                        <div class="col-15">Product Code</div>
+                    </th>
+                    <th>
+                        <div class="col-15">Product Name</div>
+                    </th>
+                    <th>
+                        <div class="col-15">Product Brand</div>
+                    </th>
+                    <th>
+                        <div class="col-15">Product Rating</div>
+                    </th>
+                    <th>
+                        <div class="col-15">Product Total Review</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>{{product.code}}</td>
+                    <td>{{product.brand}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.avgRating}}</td>
+                    <td>{{product.noOfReviews}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row col-center">
+            <div class="col-40 product-review " *ngFor="let review of reviews">
+                <div class="row">
+                    <div class="col-75 review left">
+                        <div class="row">
+                            <div class="col heading">{{review.heading}}</div>
+                        </div>
+                        <div class="row col-center">
+                            <div class="col comment">{{review.review}}</div>
+                        </div>
+                    </div>
+                    <div class="col-25 right activity">
+                        {{review.rating}}<i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-40"></div>
+        </div>
+    </div>
+
+</div>

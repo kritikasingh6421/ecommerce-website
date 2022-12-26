@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'reset';
+@import 'src/scss/variable';
+@import 'src/scss/responsive';
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 0px 5px;
+}
+
+span {
+  color: red;
+}
+
+.page-header {
+  border-bottom: 1px solid black;
+}
+
+.form-outer-bg {
+  background-color: #c3c3c3;
+  background-size: 100% 100%;
+  padding: 50px 150px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-inner-bg {
+  background-color: #ffffff;
+  background-size: 100% 100%;
+  border-radius: 5px;
+  min-height: 100%;
+  padding: 10px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 #737373, 0 6px 20px 0 #737373;
+}
+
+.form-header-text {
+  color: $form-header-color;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.form-field {
+  padding: 0px 50px;
+}
+
+input[type=email],
+input[type=text],
+input[type=password],
+input[type=textarea],
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: $form-field-color;
+  color: black;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: $form-field-color;
+  color: black;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit],
+input[type=reset] {
+  width: 100px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 8px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  align-items: center;
+}
+
+input[type=submit]:hover {
+  background-color: #666666;
+}
+
+/*div.form-field {
+    border-radius: 5px;
+    //width: 50%;
+    background-color: #f2f2f2;
+    padding: 20px;
+}*/
+
+input.ng-invalid.ng-touched {
+  border: 2px double red;
+}

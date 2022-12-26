@@ -1,0 +1,13 @@
+package com.nagarro.community;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BackendExitTestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BackendExitTestApplication.class, args);
+	}
+
+}

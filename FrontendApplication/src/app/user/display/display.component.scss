@@ -1,0 +1,136 @@
+@import '/src/scss/variable';
+
+.outer-bg {
+    background-color: #c3c3c3;
+    background-size: 100% 100%;
+    padding: 20px;
+    min-height: 100%;
+    //width: 100vw;
+    height: 100vh;
+}
+
+.inner-bg {
+    background-color: #ffffff;
+    background-size: 100% 100%;
+    border-radius: 5px;
+    min-height: 100%;
+    padding: 50px;
+}
+
+.header {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.header-text {
+    border-left: 8px solid #ccc;
+    border-top: 8px solid #ccc;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    //margin-top: 35px;
+    padding: 10px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 #737373, 0 6px 20px 0 #737373;
+}
+
+.products-info {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 20px 0px 20px 20px;
+    border-right: 5px solid #737373;
+    border-bottom: 5px solid #737373;
+    padding: 10px;
+    margin: 10px 10px;
+    width: 30%;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.products-info::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.filter {
+    background-color: #dedede;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+select {
+    width: 50%;
+    padding: 12px;
+    background-color: $form-field-color;
+    color: black;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.product-header {
+    font-weight: bold;
+    color: black;
+    margin: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: white;
+    border-bottom: 2px solid #737373;
+}
+
+.product-details {
+    margin: 3px;
+    background-color: #c3c3c3;
+    border-radius: 8px;
+}
+
+.product-details.col-30 {
+    text-align: center;
+}
+
+.attribute {
+    margin: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.value {
+    color: #737373;
+    font-weight: bold;
+}
+
+.alert {
+    background-color: #f1f1f1;
+    border: 2px double #737373;
+    border-radius: 10px;
+    padding: 30px;
+    color: #737373;
+    text-align: center;
+    margin: 50px 200px 0px;
+    //width: 50%;
+}

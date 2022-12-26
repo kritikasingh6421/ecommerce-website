@@ -1,0 +1,32 @@
+@import 'src/scss/variable';
+
+.bg-img{
+    background-image: url($bg-img);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+}
+.bg-text{
+    color: $font-color;
+}
+.intro{
+    padding-top: 250px;
+    text-align: end;
+}
+.statistic{
+    color: white;
+    margin-top: 80px;
+    text-align: center;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.icon{
+    font-size: 50px;
+    margin: 5px;
+}

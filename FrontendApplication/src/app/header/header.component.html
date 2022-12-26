@@ -1,0 +1,11 @@
+<header *ngIf="!hideHeader">
+    <div class="row col-start">
+        <div class="col">
+            <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px;color: white;"></i>
+            <a *ngIf="!isLogin" routerLink="login" routerLinkActive="active">Login/</a>
+            <a *ngIf="!isLogin" routerLink="register" routerLinkActive="active">Register</a>
+            <span *ngIf="isLogin"> Welcome, {{userLogin}}</span>
+            <input *ngIf="isLogin" type="submit" value="Logout" class="btn" (click)="logout()">
+        </div>
+    </div>
+</header>

@@ -1,0 +1,117 @@
+<div class="outer-bg">
+    <div class="inner-bg shadow">
+        <div class="header">
+            <div class="row col-center header-text">
+                <h2>Products Available in Shop</h2>
+            </div>
+            <div class="row">
+                <div class="col-15 left">
+                    <input type="submit" value="BACK" class="btn" (click)="back()">
+                </div>
+                <div class="col-60 right">
+                    <form [formGroup]="filter" (ngSubmit)="onSubmit()">
+                        <div class="row filter">
+                            <div class="col-25 center">
+                                Filter by Brand
+                                <select formControlName="brand">
+                                    <option [ngValue]="null" disabled>Brand</option>
+                                    <option *ngFor="let b of brands" [ngValue]="b.bId">
+                                        {{b.bname}}
+                                    </option>
+                                </select>
+                                <span *ngIf="brand && brand.invalid && filter.dirty">*</span>
+                            </div>
+                            <div class="col-25 center">
+                                Filter by Rating
+                                <select formControlName="rating">
+                                    <option [ngValue]="null" disabled>Rating</option>
+                                    <option *ngFor="let r of ratings" [ngValue]="r.rId">
+                                        < {{r.rNumber}} </option>
+                                </select>
+                                <span *ngIf="rating && rating.invalid && filter.dirty">*</span>
+                            </div>
+                            <div class="col-10">
+                                <input type="submit" value="SET" [disabled]="filter.invalid">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-25 right">
+                    Ask For Review
+                    <input type="submit" value="ASK" routerLink="reviews" routerLink="ask-for-review"
+                        routerLinkActive="active">
+                </div>
+            </div>
+        </div>
+        <div class="row col-center">
+            <div class="col" *ngIf="noResult">
+                <div class="alert">Sorry!! We do not have any product of your Choice.</div>
+            </div>
+            <div class="col-40 products-info shadow " *ngFor="let product of products">
+                <div class="row product-header">
+                    <div class="col-60 ">
+                        <div class="row">PRODUCT DETAILS</div>
+                    </div>
+                    <div class="col-30">
+                        <div class="row">REVIEW ACTIONS</div>
+                    </div>
+                </div>
+                <div class="row col-center">
+                    <div class="col-60 product-details">
+                        <div class="row ">
+                            <div class="col-30 attribute">
+                                <div class="row">Product Code</div>
+                            </div>
+                            <div class="col-30 value">
+                                <div class="row">{{product.code}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30 attribute">
+                                <div class="row">Product Brand</div>
+                            </div>
+                            <div class="col-30 value">
+                                <div class="row">{{product.brand}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30 attribute">
+                                <div class="row">Product Name</div>
+                            </div>
+                            <div class="col-30 value">
+                                <div class="row">{{product.name}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30 attribute">
+                                <div class="row">Product Rating</div>
+                            </div>
+                            <div class="col-30 value">
+                                <div class="row">{{product.avgRating}}<i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30 attribute">
+                                <div class="row">Total Reviews</div>
+                            </div>
+                            <div class="col-30 value">
+                                <div class="row">{{product.noOfReviews}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-30">
+                        <div class="row">
+                            <input type="submit" value="WATCH" (click)="redirect(product.code)">
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="COMMENT" routerLink="post-review/{{product.code}}"
+                                routerLinkActive="active">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-40"></div>
+        </div>
+    </div>
+</div>

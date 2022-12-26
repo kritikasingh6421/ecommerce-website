@@ -1,0 +1,77 @@
+<div class="form-outer-bg">
+    <div class="form-inner-bg shadow">
+        <div class="row col-center register-header">
+            <h2>REGISTER</h2>
+        </div>
+        <div class="row col-center" *ngIf="registerFail">
+            <div class="message">
+                Name Already Exist
+            </div>
+        </div>
+        <div class="row col-center form-header-text">
+            <h3>Register with your email and password</h3>
+        </div>
+        <div class="row col-center form-field">
+            <form [formGroup]="register" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <input type="email" name="email" formControlName="email" placeholder="Email*">
+                    <span *ngIf="email && email.invalid && email.touched && email.pristine">
+                        *email is mendatory.
+                    </span>
+                    <span *ngIf="email && email.invalid && email.touched && email.dirty">
+                        *email is invalid.
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <input type="text" name="firstname" formControlName="firstname" placeholder="First Name">
+                        <span *ngIf="firstname && firstname.invalid && firstname.touched && firstname.pristine">
+                            *mendatory.
+                        </span>
+                        <span *ngIf="firstname && firstname.invalid && firstname.touched && firstname.dirty">
+                            *invalid.
+                        </span>
+                    </div>
+                    <div class="col-50">
+                        <input type="text" name="lastname" formControlName="lastname" placeholder="Last Name">
+                        <span *ngIf="lastname && lastname.invalid && lastname.touched && lastname.pristine">
+                            *mendatory.
+                        </span>
+                        <span *ngIf="lastname && lastname.invalid && lastname.touched && lastname.dirty">
+                            *invalid.
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <input type="password" name="password" formControlName="password" placeholder="Password*">
+                        <span *ngIf="password && password.invalid && password.touched && password.pristine">
+                            *mendatory.
+                        </span>
+                        <span *ngIf="password && password.invalid && password.touched && password.dirty">
+                            *must be 8 charlong.
+                        </span>
+                    </div>
+                    <div class="col-50">
+                        <input type="password" name="cpassword" formControlName="cpassword"
+                            placeholder="Confirm Password*">
+                        <span *ngIf="cpassword && cpassword.invalid && cpassword.touched && cpassword.pristine">
+                            *password is mendatory.
+                        </span>
+                        <span *ngIf="cpassword && cpassword.invalid && cpassword.touched && cpassword.dirty">
+                            *must be 8 char long.
+                        </span>
+                        <span *ngIf="match==false">Not match with Password</span>
+                    </div>
+                </div>
+                <div class="row col-center">
+                    <input type="submit" value="SUBMIT" class="btn" [disabled]="register.invalid">
+                    <input type="reset" value="RESET" class="btn">
+                </div>
+            </form>
+        </div>
+        <div class="row col-end">
+            <a (click)="login()" style="color: black;"><button>Have an account already?</button></a>
+        </div>
+    </div>
+</div>

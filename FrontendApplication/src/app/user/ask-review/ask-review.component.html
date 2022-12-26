@@ -1,0 +1,52 @@
+<div class="form-outer-bg">
+    <div class="form-inner-bg shadow">
+        <div class="row col-center page-header">
+            <h2>Ask Review</h2>
+        </div>
+        <div class="row col-center" *ngIf="approved">
+            <div class="alert"><b>This product is already available..</b><br>
+                You are automatically redirected to product review page after 30sec.
+            </div> 
+        </div>
+        <div class="row col-center" *ngIf="pending">
+            <div class="alert"><b>This product is already available..</b><br>
+                But it is not approved by admin
+            </div> 
+        </div>
+        <div class="row col-center" *ngIf="unavailable">
+            <div class="alert"><b>Sorry!!This product is not available..</b><br>
+                Your request has been recorded for approval..
+            </div> 
+        </div>
+        <div class="row col-center form-header-text">
+            <h3>Ask for Review of Product</h3>
+        </div>
+        <div class="row col-center">
+            <form [formGroup]="ask" (ngSubmit)="onSubmit()">
+                <div class="row col-center form-field">
+                    <div class="col">
+                        <input type="text" name="code" formControlName="code" placeholder="Product Code*" required>
+                        <span *ngIf=" code && code.invalid && code.touched && code.pristine">*mendatory.</span>
+                        <span *ngIf="code && code.invalid && code.touched && code.dirty">*invalid</span>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="brand" formControlName="brand" placeholder="Product Brand*" required>
+                        <span *ngIf="brand && brand.invalid && brand.touched && brand.pristine">*mendatory.</span>
+                        <span *ngIf="brand && brand.invalid && brand.touched && brand.dirty">*invalid</span>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="name" formControlName="name" placeholder="Product Name" required>
+                        <span *ngIf="name && name.invalid && name.touched && name.pristine">*mendatory.</span>
+                        <span *ngIf="name && name.invalid && name.touched && name.dirty">*invalid</span>
+                    </div>
+                    <input type="hidden" formControlName="avgRating" name="avgRating">
+                    <input type="hidden" name="noOfReviews" formControlName="noOfReviews">
+                    <input type="hidden" name="approval" formControlName="approval">
+                    <div class="row col-center">
+                        <input type="submit" value="SUBMIT" class="btn" [disabled]="ask.invalid">
+                    </div>
+                </div>
+            </form>  
+        </div>
+    </div>
+</div>

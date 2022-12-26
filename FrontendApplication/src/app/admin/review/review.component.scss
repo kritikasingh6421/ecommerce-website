@@ -1,0 +1,73 @@
+.bg {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.header {
+    color: black;
+    background-color: #dedede;
+    border: 2px solid #737373;
+    padding: 5px;
+    margin: 10px 20px;
+}
+
+.activity {
+    border-left: 2px solid #737373;
+}
+
+.product-code {
+    color: #737373;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.heading {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.comment {
+    color: #1F4690;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.product-review {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 20px 0px 20px 20px;
+    border-right: 5px solid #737373;
+    border-bottom: 5px solid #737373;
+    padding: 10px;
+    margin: 10px 10px;
+    width: 50%;
+}
+
+.action {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.action.accept {
+    color: green;
+}
+
+.action.reject {
+    color: red;
+}
+
+button {
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+button:hover {
+    background-color: #dedede;
+}

@@ -1,0 +1,21 @@
+<div class="bg-img">
+    <div class="row search-bar">
+        <div class="col center">
+            <form [formGroup]="search" (ngSubmit)="onSubmit()">
+                <input type="text" name="code" formControlName="code" placeholder="Search..">
+                <!-- <span *ngIf="code && code.invalid && code.touched && code.pristine">
+                *mendatory
+            </span> -->
+                <button type="submit" [disabled]="search.invalid">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="row intro bg-text">
+        <div class="col col-end">
+            <h2>THE COMMUNITY</h2>
+            <p>Find Solutions, Ask Questions, Share Ideas, <br> Connect with users across the world</p>
+        </div>
+    </div>
+</div>

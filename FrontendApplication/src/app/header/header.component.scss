@@ -1,0 +1,19 @@
+@import 'src/scss/variable';
+header{ 
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    background-color: $black;
+    color: $font-color;
+    padding: 10px;
+}
+.btn{
+    background-color: white;
+    color: black;
+    float: right;
+}
+span{
+    color: white;
+    font-weight: bold;
+}

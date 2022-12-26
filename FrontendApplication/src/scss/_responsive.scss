@@ -1,0 +1,52 @@
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.col-10 {
+    flex: 10%;
+}
+
+.col-15 {
+    flex: 15%;
+}
+
+.col-25 {
+    flex: 25%;
+}
+
+.col-30 {
+    flex: 30%;
+}
+
+.col-40 {
+    flex: 40%;
+}
+
+.col-50 {
+    flex: 50%;
+}
+
+.col-60 {
+    flex: 60%;
+}
+
+.col-75 {
+    flex: 75%;
+}
+
+.col {
+    flex: 100%;
+}
+
+.col-center {
+    justify-content: center;
+}
+
+.col-start {
+    justify-content: start;
+}
+
+.col-end {
+    justify-content: end;
+}

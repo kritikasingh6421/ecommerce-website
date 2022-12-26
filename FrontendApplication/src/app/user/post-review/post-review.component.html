@@ -1,0 +1,54 @@
+<div class="form-outer-bg">
+    <div class="form-inner-bg shadow">
+        <div class="row col-center page-header">
+            <h2>POST REVIEW</h2>
+        </div>
+        <div class="row col-start">
+            <input type="submit" value="BACK" class="btn" (click)="back()">
+        </div>
+        <div class="row col-center form-field">
+            <form [formGroup]="postReview" (ngSubmit)="onSubmit()">
+                <div class="row col-center">
+                    <div class="col">
+                        <input type="text" name="productCode" formControlName="productCode" placeholder="Product Code"
+                            readonly>
+                    </div>
+                    <div class="col">
+                        <input type="hidden" name="approval" formControlName="approval">
+                        <input type="number" name="rating" formControlName="rating" placeholder="Rating*" min="1"
+                            max="5">
+                        <span *ngIf="rating && rating.invalid && rating.touched && rating.pristine">
+                            *rating is mendatory.
+                        </span>
+                        <span *ngIf="rating && rating.invalid && rating.touched && rating.dirty">
+                            *btween 1 to 5
+                        </span>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="heading" formControlName="heading" placeholder="Heading*"
+                            maxlength="20"><br>
+                        <span *ngIf="heading && heading.invalid && heading.touched && heading.pristine">
+                            *heading is mendatory.
+                        </span>
+                        <span *ngIf="heading && heading.invalid && heading.touched && heading.dirty">
+                            *length exceed
+                        </span>
+                    </div>
+                    <div class="col">
+                        <textarea name="review" formControlName="review" cols="30" rows="7"
+                            placeholder="write your experience..." minlength="20" maxlength="400"></textarea>
+                        <span *ngIf="review && review.invalid && review.touched && review.pristine">
+                            *mendatory.
+                        </span>
+                        <span *ngIf="review && review.invalid && review.touched && review.dirty">
+                            *Character length(20,400)
+                        </span>
+                    </div>
+                    <div class="row col-center">
+                        <input type="submit" value="SUBMIT" class="btn" [disabled]="postReview.invalid">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
